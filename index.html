@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Incredible India - Travel</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Banner Navigation Bar -->
+  <nav class="navbar">
+    <div class="logo">🌏 Incredible India</div>
+    <ul class="nav-links">
+      <li><a href="#discover">Discover</a></li>
+      <li><a href="#trips">Trips</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a class="login-btn" onclick="openModal()">Login</a></li>
+
+      <!-- <li><a href="#signin" class="signin-btn">Sign In</a></li> -->
+    </ul>
+  </nav>
+
+
+        
+</nav>
+  <!-- Overlay (Modal Background) -->
+  <div class="overlay" id="overlay">
+    <div class="form-box">
+
+      <!-- Login Container -->
+      <div class="login-container" id="login">
+        <header>Sign In</header>
+        <input type="text" placeholder="Email" class="input-field">
+        <input type="password" placeholder="Password" class="input-field">
+        <button class="submit">Login</button>
+        <p class="switch">Don't have an account? <a href="#" onclick="showSignup()">Sign Up</a></p>
+      </div>
+
+      <!-- Signup Container -->
+      <div class="register-container" id="signup">
+        <header>Sign Up</header>
+        <input type="text" placeholder="Username" class="input-field">
+        <input type="email" placeholder="Email" class="input-field">
+        <input type="password" placeholder="Password" class="input-field">
+        <button class="submit">Register</button>
+        <p class="switch">Already have an account? <a href="#" onclick="showLogin()">Sign In</a></p>
+      </div>
+    </div>
+  </div>
+   
+<script>
+   
+   function myMenuFunction() {
+    var i = document.getElementById("navMenu");
+    if(i.className === "nav-menu") {
+        i.className += " responsive";
+    } else {
+        i.className = "nav-menu";
+    }
+   }
+ 
+</script>
+<script>
+    var a = document.getElementById("loginBtn");
+    var b = document.getElementById("registerBtn");
+    var x = document.getElementById("login");
+    var y = document.getElementById("register");
+    function login() {
+        x.style.left = "4px";
+        y.style.right = "-520px";
+        a.className += " white-btn";
+        b.className = "btn";
+        x.style.opacity = 1;
+        y.style.opacity = 0;
+    }
+    function register() {
+        x.style.left = "-510px";
+        y.style.right = "5px";
+        a.className = "btn";
+        b.className += " white-btn";
+        x.style.opacity = 0;
+        y.style.opacity = 1;
+    }
+</script>
+
+  <!-- Banner Section with Image -->
+<div class="banner-container">
+  <div class="banner-content">
+    <h1>😊Ready, Plan, Explore!</h1>
+    <p>✨Happy Journey!!</p>
+
+    <!-- Contact Details -->
+    <p class="contact-info">
+      ☎️ +91-8000010000 <br>
+      📧 Travel2334@gmail.com
+    </p>
+
+    <!-- Call / Email Buttons
+    <div class="cta-btn-container">
+      <a href="tel:+917088205958" class="cta-btn">📞 Call Now</a>
+      <a href="mailto:pratapabhay8256@gmail.com" class="cta-btn">📧 Email Me</a>
+    </div> -->
+
+    <!-- Contact Form -->
+   <!-- <form class="contact-form">
+  <input type="text" placeholder="Your Name" required>
+  <input type="email" placeholder="Your Email" required>
+  <input type="tel" placeholder="Your Phone" required>
+  <button type="submit" class="cta-btn">Get a Callback</button>
+</form> -->
+
+  </div>
+</div>
+
+
+
+  <!-- Content Section (for example) -->
+  <section class="content">
+    <h2>Welcome to Incredible India</h2>
+    <p>Explore all the amazing destinations across India...</p>
+  </section>
+
+  <!-- Location Selector (now inside card) -->
+  <section class="selector">
+    <label for="location">Choose a location: </label>
+    <select id="location">
+      <option value="all">All</option>
+      <option value="Uttarakhand">Uttarakhand</option>
+      <option value="Rajasthan">Rajasthan</option>
+      <option value="goa">Goa</option>
+      <option value="kerala">Kerala</option>
+    </select>
+  </section>
+
+  <!-- Cards Section -->
+  <section class="cards" id="cards">
+    <!-- Agra -->
+    <!-- Uttarakhand -->
+<div class="card" data-location="Uttarakhand">
+  <img src="images/uk.jpg" alt="Uttarakhand">
+  <h2>Uttarakhand</h2>
+  <p class="summary">Explore the Land of the Gods, Uttarakhand, a destination offering spiritual rejuvenation.</p>
+  <div class="details">
+    <div class="sub-cards">
+      <div class="sub-card">
+        <img src="images/b.jpg" alt="Badrinath">
+        <h3>Badrinath</h3>
+        <p>One of the Char Dham temples, sacred and spiritual.
+          Location: Chamoli district, Uttarakhand, India. Badrinath is situated at an elevation of 3,133 meters (10,279 ft) on the banks of the Alaknanda River.
+          History & Mythology: The temple is believed to have been established by Adi Shankaracharya in the 8th century. It is associated with legends of the sage Badri and Lord Vishnu meditating in this area.
+        </p>
+      </div>
+      <div class="sub-card">
+        <img src="images/k.jpg" alt="Kedarnath">
+        <h3>Kedarnath</h3>
+        <p>Famous Shiva temple amidst the Himalayas, part of Char Dham.
+          Location: Rudraprayag district, Uttarakhand, India. It is situated at an altitude of 3,583 meters (11,755 ft) in the Garhwal Himalayas near the Mandakini River.
+          History & Mythology: According to legend, the Pandavas sought Lord Shiva at Kedarnath after the Mahabharata war for atonement. Shiva is believed to have evaded them and appeared in the form of a bull.
+          Best Time to Visit: April to June and September to November. The temple remains closed in winter due to heavy snowfall.
+        </p>
+      </div>
+      <div class="sub-card">
+        <img src="images/g.jpg" alt="Gangotri">
+        <h3>Gangotri</h3>
+        <p>Origin of the Ganga River, spiritual and scenic beauty.
+          Location: Uttarkashi district, Uttarakhand, India, at an altitude of 3,415 meters (11,204 ft). Gangotri is the origin of the Ganga River.
+
+Significance: Gangotri Temple is dedicated to Goddess Ganga. It is a highly revered site in Hinduism, as the river is considered sacred and purifying. It is usually the last stop on the Chota Char Dham Yatra.
+        </p>
+      </div>
+      <div class="sub-card">
+        <img src="images/y.jpg" alt="Yamunotri">
+        <h3>Yamunotri</h3>
+        <p>Holy shrine of Goddess Yamuna, part of Char Dham pilgrimage.
+          Location: Uttarkashi district, Uttarakhand, India, at an altitude of 3,293 meters (10,804 ft). The Yamunotri Temple is the source of the Yamuna River, one of India’s sacred rivers.
+
+Significance: Yamunotri is dedicated to Goddess Yamuna, and visiting this temple is believed to cleanse sins and grant spiritual merit. It is the first stop for many pilgrims on the Chota Char Dham Yatra.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    <!-- Jaipur -->
+<div class="card" data-location="Rajasthan">
+  <img src="images/rajasthan.jpg" alt="Rajasthan">
+  <h2>Rajasthan</h2>
+  <p class="summary">Rajasthan is the largest Indian state by area and is known for its rich history, vibrant culture, and iconic forts and palaces.</p>
+  <div class="details">
+    <div class="sub-cards">
+      <div class="sub-card">
+        <img src="images/a.jpg" alt="Amber Fort">
+        <h3>Amber Fort</h3>
+        <p>Historic fort with stunning architecture and views.\n Amer Fort, or Amber Fort, is a historic and majestic fortress located in Amer, now a part of Jaipur, Rajasthan, India. Built in red sandstone and marble, construction began around 1600 by the Rajput Maharajas and served as a royal residence and political center for the Kachwaha Rajputs for centuries. </p>
+      </div>
+      <div class="sub-card">
+        <img src="images/jaipur.jpg" alt="Hawa Mahal">
+        <h3>Hawa Mahal</h3>
+        <p>The Palace of Winds with its iconic pink façade.The Hawa Mahal, or "Palace of Winds," is a unique 18th-century palace in Jaipur, India, built for royal women to observe street festivities unseen, featuring a striking honeycomb-like facade with 953 small, jharokha windows. Designed by Lal Chand Usta with a blend of Hindu Rajput and Islamic styles, its distinctive pyramidal shape, leaning at an 87-degree angle</p>
+      </div>
+      <div class="sub-card">
+        <img src="images/c.jpg" alt="City Palace">
+        <h3>City Palace</h3>
+        <p>Royal residence with museums and courtyards.A City Palace is a historical complex in India that often refers to either the City Palace of Jaipur, a fusion of Mughal and Rajput architecture that still houses the royal family and a museum, or the City Palace in Udaipur, the largest palace of its kind in Rajasthan and also a major museum</p>
+      </div>
+      <div class="sub-card">
+        <img src="images/j.jpg" alt="Jal Mahal">
+        <h3>Jal Mahal</h3>
+        <p>Beautiful palace in the middle of Man Sagar Lake.The Jal Mahal, or "Water Palace," is a historic, five-story palace built in the 18th century in the middle of Man Sagar Lake in Jaipur, India, appearing to float on the water when the lake is full. Constructed by Maharaja Jai Singh II in Rajput. it was originally a hunting lodge and has since been restored to preserve the surrounding lake's ecosystem, now a popular tourist attraction for its stunning architecture and scenic location. </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Goa -->
+<div class="card" data-location="goa">
+  <img src="images/goa.jpg" alt="Goa">
+  <h2>Goa</h2>
+  <p class="summary">Golden beaches, nightlife, and Portuguese heritage.</p>
+  <div class="details">
+    <div class="sub-cards">
+      <div class="sub-card">
+        <img src="images/baga.jpg" alt="Baga Beach">
+        <h3>Baga Beach</h3>
+        <p>Famous for nightlife, water sports and beach parties. Baga Beach is a famous, lively, golden-sanded beach in North Goa, known for its bustling atmosphere, water sports like jet skiing and parasailing, vibrant nightlife along Tito's Lane, and diverse shopping opportunities including flea and night markets. Named after the Baga Creek, it offers a mix of adventure, relaxation.</p>
+      </div>
+      <div class="sub-card">
+        <img src="images/fort.jpg" alt="Fort Aguada">
+        <h3>Fort Aguada</h3>
+        <p>Historic lighthouse fort overlooking the Arabian Sea. Fort Aguada is a well-preserved 17th-century Portuguese fort in Goa, India, strategically located at the confluence of the Mandovi River and the Arabian Sea. Named for its freshwater springs providing water to passing ships, the fort features durable laterite stone architecture, a four-story lighthouse (the oldest in Asia, built in 1864), and a historic jail, which was later used as a prison.</p>
+      </div>
+      <div class="sub-card">
+        <img src="images/old.jpg" alt="Old Goa Churches">
+        <h3>Old Goa Churches</h3>
+        <p>UNESCO heritage churches with rich Portuguese history. Churches Of Old Goa: A Local's Guide To Visiting The UNESCO ...The churches of Old Goa are a group of religious monuments in the former Portuguese capital, including seven sites designated as a UNESCO World Heritage site. These structures, featuring Baroque and Mannerist architecture,</p>
+      </div>
+      <div class="sub-card">
+        <img src="images/palolem.jpg" alt="Palolem Beach">
+        <h3>Palolem Beach</h3>
+        <p>Scenic southern beach, perfect for a relaxed getaway. Palolem Beach is a picturesque, crescent-shaped beach in South Goa known for its calm, shallow waters suitable for swimming and water sports, and its beautiful, clean white sand. It offers a blend of tranquility, a relaxed atmosphere with beachfront huts and restaurants, and opportunities for activities like dolphin spotting, kayaking, and boat trips to nearby islands.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    <!-- Kerala with Sub-Cards -->
+    <div class="card" data-location="kerala">
+      <img src="images/kerala.jpg" alt="Kerala">
+      <h2>Kerala</h2>
+      <p class="summary">God’s Own Country with backwaters, hills and lush greenery.</p>
+      <div class="details">
+        <div class="sub-cards">
+          <div class="sub-card">
+            <img src="images/alle.jpg" alt="Alleppey">
+            <h3>Alleppey</h3>
+            <p>Backwaters, houseboats & lagoons. Alleppey Beach is a popular destination in Alappuzha, Kerala, known for its scenic beauty, a 150-year-old pier, and the nearby Alleppey lighthouse. While perfect for strolls and enjoying sunsets, swimming is generally discouraged due to strong currents, and visitors should be mindful of the strong waves.</p>
+          </div>
+          <div class="sub-card">
+            <img src="images/mu.jpg" alt="Munnar">
+            <h3>Munnar</h3>
+            <p>Tea gardens, misty hills, and wildlife. Munnar is a picturesque hill station in Kerala, India, celebrated for its sprawling tea plantations, misty landscapes, and the unique, rare Neelakurinji flower that blooms every twelve years. As a popular tourist destination in the Western Ghats, it offers natural beauty including Eravikulam National Park, the Anamudi Peak, various waterfalls, and scenic valleys</p>
+          </div>
+          <div class="sub-card">
+            <img src="images/kochi.jpg" alt="Kochi">
+            <h3>Kochi</h3>
+            <p>Historic city with spice markets & fishing nets. 48 Hrs In Kochi, Kerala. Is The Queen Of The Arabian Sea ...Kochi, or Cochin, is a major port city on India's southwest coast in Kerala, known as the "Queen of the Arabian Sea" for its historical role as a spice trading hub and its strategic location near the Western Ghats and Arabian Sea. It's a cosmopolitan city that blends old-world charm, evidenced by its colonial architecture and ancient synagogue.</p>
+          </div>
+          <div class="sub-card">
+            <img src="images/wayanad.jpg" alt="Wayanad">
+            <h3>Wayanad</h3>
+            <p>Waterfalls, caves, and wildlife sanctuaries. Wayanad is a picturesque district in the Western Ghats mountains of Kerala, India, known for its lush green landscapes, diverse wildlife, and rich cultural heritage. Its name, derived from the Malayalam words "Vayal Nadu," means "land of paddy fields," reflecting its extensive agricultural lands</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  <div class="card" data-location="Uttar Pradesh">
+  <img src="images/up.jpg" alt="Uttar Pradesh">
+  <h2>Uttar Pradesh</h2>
+  <p class="summary"> the country's most populous state and a land of immense cultural, historical, and spiritual significance</p>
+  <div class="details">
+    <div class="sub-cards">
+      <div class="sub-card">
+        <img src="images/mathura.jpg" alt="Vrindavan">
+        <h3>Prem Mandir, Mathura</h3>
+        <p>Prem Mandir, located in Mathura, is a magnificent temple complex that attracts devotees and tourists alike. The temple is dedicated to Lord Krishna and his eternal love for Radha. Built with immaculate architecture and intricate craftsmanship, Prem Mandir stands as a symbol of devotion and spirituality.</p>
+      </div>
+      <div class="sub-card">
+        <img src="images/var.jpg" alt="Varansi">
+        <h3>Varansi</h3>
+        <p>Varanasi, also known as Benares or Kashi, is one of the world's oldest continuously inhabited cities and India's holiest city for Hindus. Located on the Ganges River, it is a major center for Hinduism, with countless temples and pilgrimage sites like the Assi Ghat, where devotees seek spiritual atonement and liberation from the cycle of death and rebirth.</p>
+      </div>
+      <div class="sub-card">
+        <img src="images/luck.jpg" alt="Lucknow">
+        <h3>Lucknow</h3>
+        <p>Lucknow, the capital of India's Uttar Pradesh state, is a historic city on the Gomati River, renowned for its rich cultural heritage, elegant architecture, and flavorful cuisine, largely influenced by the Nawabs who once ruled the region. Key cultural aspects include refined courtly manners, music, poetry.</p>
+      </div>
+      <div class="sub-card">
+        <img src="images/noida.jpg" alt="Noida">
+        <h3>Noida</h3>
+        <p>
+        Noida, short for New Okhla Industrial Development Authority, is a planned satellite city in Uttar Pradesh, India, and a key part of the National Capital Region (NCR). Created under the UP Industrial Area Development Act of 1976, it is known for its modern infrastructure
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="card" data-location="Jammu and Kashmir">
+  <img src="images/jk.jpg" alt="Jammu and Kashmir">
+  <h2>Jammu and kashmir</h2>
+  <p class="summary">Stunning natural beauty, including picturesque valleys, snow-capped mountains, and serene lakes.</p>
+  <div class="details">
+    <div class="sub-cards">
+      <div class="sub-card">
+        <img src="images/sri.jpg" alt="Srinagar">
+        <h3>Srinagar</h3>
+        <p>The capital city of Srinagar is located 1585 meters above sea level. The city is famous for its gardens, lakes and houseboats. It is also known for traditional Kashmiri handicrafts and dried fruits. The city is located on both the sides of the Jhelum River, which is called Vyath in Kashmir.</p>
+      </div>
+      <div class="sub-card">
+        <img src="images/gul.jpg" alt="Gulmarg">
+        <h3>Gulmarg</h3>
+        <p>Gulmarg, meaning "Meadow of Flowers," is a picturesque hill station in the Pir Panjal range of the Himalayas, known for its stunning natural beauty and status as a premier Indian ski destination. During winter, it transforms into a snow-covered paradise for skiers and snowboarders, while spring and summer offer lush, flower-filled meadows</p>
+      </div>
+      <div class="sub-card">
+        <img src="images/son.jpg" alt="Sonmarg">
+        <h3>Sonmarg</h3>
+        <p>Sonmarg, meaning "Meadow of Gold," is a breathtaking tourist destination in the Indian Union Territory of Jammu and Kashmir, known for its stunning natural beauty, meadows, and glaciers, including the famous Thajiwas Glacier.</p>
+      </div>
+      <div class="sub-card">
+        <img src="images/vd.jpg" alt="Vaishno Devi">
+        <h3>Vaishno Devi</h3>
+        <p>Vaishno Devi (also known as Mata Rani, Trikuta, Ambe and Vaishnavi) is an unmarried form of the Hindu mother goddess Mahalakshmi, embodying the tattva of Mahasarasvati and Mahakali. Vaishno Devi is worshipped as a combined avatar of the trinity goddesses. Additionally, she is seen as the potency of Hari or Vishnu.</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="card" data-location="Himachal Pradesh">
+  <img src="images/hp.jpg" alt="Himachal Pradesh">
+  <h2>Himachal Pradesh</h2>
+  <p class="summary">Majestic Himalayan scenery, featuring snow-capped peaks, lush valleys, dense forests, and serene rivers like the Beas.</p>
+  <div class="details">
+    <div class="sub-cards">
+      <div class="sub-card">
+        <img src="images/shimla.jpg" alt="Shimla">
+        <h3>Shimla</h3>
+        <p>Shimla, the capital of Himachal Pradesh, is a popular Indian hill station known for its colonial architecture, natural beauty, and temperate climate, earning it the nickname "Queen of the Hills". Originally established by the British, it served as the summer capital of British India from 1865 to 1939</p>
+      </div>
+      <div class="sub-card">
+        <img src="images/ma.jpg" alt="Manali">
+        <h3>Manali</h3>
+        <p>Manali is a picturesque Himalayan resort town in India's Himachal Pradesh state, famous for its snow-capped mountains, lush valleys, and the Beas River. It serves as a popular tourist destination offering both natural beauty and adventure sports like skiing, paragliding, and trekking, while also being a gateway</p>
+      </div>
+      <div class="sub-card">
+        <img src="images/hd.jpg" alt="Hadimba Temple">
+        <h3>Hadimba Temple</h3>
+        <p>The Hadimba Temple, or Hidimba Devi Temple, is a 16th-century wooden temple in Manali, India, dedicated to Hidimba Devi, the wife of Bheema from the Mahabharata. Its unique architecture features pagoda-style tiers and intricate wooden carvings depicting Hindu deities and local folk elements, built on an elevated platform.</p>
+      </div>
+      <div class="sub-card">
+        <img src="images/palolem.jpg" alt="Palolem Beach">
+        <h3>Palolem Beach</h3>
+        <p>Scenic southern beach, perfect for a relaxed getaway. Palolem Beach is a picturesque, crescent-shaped beach in South Goa known for its calm, shallow waters suitable for swimming and water sports, and its beautiful, clean white sand. It offers a blend of tranquility, a relaxed atmosphere with beachfront huts and restaurants, and opportunities for activities like dolphin spotting, kayaking, and boat trips to nearby islands.</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="card" data-location="goa">
+  <img src="images/goa.jpg" alt="Goa">
+  <h2></h2>
+  <p class="summary">Golden beaches, nightlife, and Portuguese heritage.</p>
+  <div class="details">
+    <div class="sub-cards">
+      <div class="sub-card">
+        <img src="images/baga.jpg" alt="Baga Beach">
+        <h3>Baga Beach</h3>
+        <p>Famous for nightlife, water sports and beach parties. Baga Beach is a famous, lively, golden-sanded beach in North Goa, known for its bustling atmosphere, water sports like jet skiing and parasailing, vibrant nightlife along Tito's Lane, and diverse shopping opportunities including flea and night markets. Named after the Baga Creek, it offers a mix of adventure, relaxation.</p>
+      </div>
+      <div class="sub-card">
+        <img src="images/fort.jpg" alt="Fort Aguada">
+        <h3>Fort Aguada</h3>
+        <p>Historic lighthouse fort overlooking the Arabian Sea. Fort Aguada is a well-preserved 17th-century Portuguese fort in Goa, India, strategically located at the confluence of the Mandovi River and the Arabian Sea. Named for its freshwater springs providing water to passing ships, the fort features durable laterite stone architecture, a four-story lighthouse (the oldest in Asia, built in 1864), and a historic jail, which was later used as a prison.</p>
+      </div>
+      <div class="sub-card">
+        <img src="images/old.jpg" alt="Old Goa Churches">
+        <h3>Old Goa Churches</h3>
+        <p>UNESCO heritage churches with rich Portuguese history. Churches Of Old Goa: A Local's Guide To Visiting The UNESCO ...The churches of Old Goa are a group of religious monuments in the former Portuguese capital, including seven sites designated as a UNESCO World Heritage site. These structures, featuring Baroque and Mannerist architecture,</p>
+      </div>
+      <div class="sub-card">
+        <img src="images/palolem.jpg" alt="Palolem Beach">
+        <h3>Palolem Beach</h3>
+        <p>Scenic southern beach, perfect for a relaxed getaway. Palolem Beach is a picturesque, crescent-shaped beach in South Goa known for its calm, shallow waters suitable for swimming and water sports, and its beautiful, clean white sand. It offers a blend of tranquility, a relaxed atmosphere with beachfront huts and restaurants, and opportunities for activities like dolphin spotting, kayaking, and boat trips to nearby islands.</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="card" data-location="goa">
+  <img src="images/goa.jpg" alt="Goa">
+  <h2></h2>
+  <p class="summary">Golden beaches, nightlife, and Portuguese heritage.</p>
+  <div class="details">
+    <div class="sub-cards">
+      <div class="sub-card">
+        <img src="images/baga.jpg" alt="Baga Beach">
+        <h3>Baga Beach</h3>
+        <p>Famous for nightlife, water sports and beach parties. Baga Beach is a famous, lively, golden-sanded beach in North Goa, known for its bustling atmosphere, water sports like jet skiing and parasailing, vibrant nightlife along Tito's Lane, and diverse shopping opportunities including flea and night markets. Named after the Baga Creek, it offers a mix of adventure, relaxation.</p>
+      </div>
+      <div class="sub-card">
+        <img src="images/fort.jpg" alt="Fort Aguada">
+        <h3>Fort Aguada</h3>
+        <p>Historic lighthouse fort overlooking the Arabian Sea. Fort Aguada is a well-preserved 17th-century Portuguese fort in Goa, India, strategically located at the confluence of the Mandovi River and the Arabian Sea. Named for its freshwater springs providing water to passing ships, the fort features durable laterite stone architecture, a four-story lighthouse (the oldest in Asia, built in 1864), and a historic jail, which was later used as a prison.</p>
+      </div>
+      <div class="sub-card">
+        <img src="images/old.jpg" alt="Old Goa Churches">
+        <h3>Old Goa Churches</h3>
+        <p>UNESCO heritage churches with rich Portuguese history. Churches Of Old Goa: A Local's Guide To Visiting The UNESCO ...The churches of Old Goa are a group of religious monuments in the former Portuguese capital, including seven sites designated as a UNESCO World Heritage site. These structures, featuring Baroque and Mannerist architecture,</p>
+      </div>
+      <div class="sub-card">
+        <img src="images/palolem.jpg" alt="Palolem Beach">
+        <h3>Palolem Beach</h3>
+        <p>Scenic southern beach, perfect for a relaxed getaway. Palolem Beach is a picturesque, crescent-shaped beach in South Goa known for its calm, shallow waters suitable for swimming and water sports, and its beautiful, clean white sand. It offers a blend of tranquility, a relaxed atmosphere with beachfront huts and restaurants, and opportunities for activities like dolphin spotting, kayaking, and boat trips to nearby islands.</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="card" data-location="goa">
+  <img src="images/goa.jpg" alt="Goa">
+  <h2></h2>
+  <p class="summary">Golden beaches, nightlife, and Portuguese heritage.</p>
+  <div class="details">
+    <div class="sub-cards">
+      <div class="sub-card">
+        <img src="images/baga.jpg" alt="Baga Beach">
+        <h3>Baga Beach</h3>
+        <p>Famous for nightlife, water sports and beach parties. Baga Beach is a famous, lively, golden-sanded beach in North Goa, known for its bustling atmosphere, water sports like jet skiing and parasailing, vibrant nightlife along Tito's Lane, and diverse shopping opportunities including flea and night markets. Named after the Baga Creek, it offers a mix of adventure, relaxation.</p>
+      </div>
+      <div class="sub-card">
+        <img src="images/fort.jpg" alt="Fort Aguada">
+        <h3>Fort Aguada</h3>
+        <p>Historic lighthouse fort overlooking the Arabian Sea. Fort Aguada is a well-preserved 17th-century Portuguese fort in Goa, India, strategically located at the confluence of the Mandovi River and the Arabian Sea. Named for its freshwater springs providing water to passing ships, the fort features durable laterite stone architecture, a four-story lighthouse (the oldest in Asia, built in 1864), and a historic jail, which was later used as a prison.</p>
+      </div>
+      <div class="sub-card">
+        <img src="images/old.jpg" alt="Old Goa Churches">
+        <h3>Old Goa Churches</h3>
+        <p>UNESCO heritage churches with rich Portuguese history. Churches Of Old Goa: A Local's Guide To Visiting The UNESCO ...The churches of Old Goa are a group of religious monuments in the former Portuguese capital, including seven sites designated as a UNESCO World Heritage site. These structures, featuring Baroque and Mannerist architecture,</p>
+      </div>
+      <div class="sub-card">
+        <img src="images/palolem.jpg" alt="Palolem Beach">
+        <h3>Palolem Beach</h3>
+        <p>Scenic southern beach, perfect for a relaxed getaway. Palolem Beach is a picturesque, crescent-shaped beach in South Goa known for its calm, shallow waters suitable for swimming and water sports, and its beautiful, clean white sand. It offers a blend of tranquility, a relaxed atmosphere with beachfront huts and restaurants, and opportunities for activities like dolphin spotting, kayaking, and boat trips to nearby islands.</p>
+      </div>
+    </div>
+  </div>
+</div>
+  </section>
+
+
+
+  <!-- Tourism Background Section -->
+<section class="tourism-background">
+  <div class="tourism-image img1"></div>
+  <div class="tourism-image img2"></div>
+  <div class="tourism-image img3"></div>
+  <div class="tourism-image img4"></div>
+</section>
+  <!-- Contact Section -->
+<section id="contact" class="contact-section">
+  <h2>Contact Me</h2>
+  <p>📧 Email: Aps123@gmail.com</p>
+  <p>📞 Phone: +91 8000010000</p>
+  <p>🏢 Address: Lakser- Haridwar, uttarakhand, India</p>
+  <p>💬 Feel free to reach out for collaborations, suggestions or travel queries!</p>
+</section>
+
+<!-- Contact Modal -->
+<div id="contactModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>Contact Me</h2>
+    <p>📧 Email: Travel2334.com</p>
+    <p>📞 Phone: +91 8000010000</p>
+    <p>🏢 Address: Lakser- Haridwar, Uttarakhand, India</p>
+    <p>💬 Feel free to reach out for collaborations, suggestions, or travel queries!</p>
+  </div>
+</div>
+
+<!-- Reviews Modal -->
+<div id="reviewsModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>User Reviews</h2>
+    <div class="review">
+      <p>⭐ ⭐ ⭐ ⭐ ⭐</p>
+      <p>"Incredible India website helped me plan my Kerala trip perfectly! Loved the visuals."</p>
+      <p>- Priya S.</p>
+    </div>
+    <div class="review">
+      <p>⭐ ⭐ ⭐ ⭐</p>
+      <p>"Great experience! The Goa section gave me all the info I needed for beaches and nightlife."</p>
+      <p>- Rahul K.</p>
+    </div>
+    <div class="review">
+      <p>⭐ ⭐ ⭐ ⭐ ⭐</p>
+      <p>"Jaipur sub-cards were amazing. Easy to explore different tourist spots virtually."</p>
+      <p>- Anjali M.</p>
+    </div>
+  </div>
+</div>
+<!-- Sub-Card Info Modal -->
+<div id="subCardModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2 id="modalTitle">Place Name</h2>
+    <img id="modalImage" src="" alt="Place Image" style="width:100%; height:200px; object-fit:cover; border-radius:10px; margin-bottom:1rem;">
+    <p id="modalDescription">Place description will appear here.</p>
+  </div>
+</div>
+  <script src="script.js"></script>
+</body>
+</html>

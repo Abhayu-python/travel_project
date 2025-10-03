@@ -1,0 +1,749 @@
+/* General */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background: linear-gradient(120deg, #3e2723, #5d4037); /* Chocolate background */
+  color: #fff;
+}
+
+/* Header */
+header {
+  text-align: center;
+  padding: 2rem;
+  background: linear-gradient(120deg, #4e342e, #3e2723);
+  box-shadow: 0 4px 10px rgb(255, 255, 255);
+}
+
+header h1 {
+  font-size: 2.5rem;
+}
+
+header p {
+  font-size: 1.2rem;
+}
+
+/* Location Selector */
+.selector {
+  text-align: left;
+  margin: 1.5rem;
+}
+
+.selector select {
+  padding: 0.5rem;
+  border-radius: 8px;
+  border: none;
+  font-size: 1rem;
+  background: #4e342e;
+  color: #fff;
+}
+
+/* Cards Grid */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  padding: 1.5rem;
+}
+
+/* Card Style */
+.card {
+  background: #4e342e; /* Dark brown */
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  cursor: pointer;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.card h2 {
+  padding: 0.8rem;
+  background: #3e2723;
+  color: #ffccbc;
+}
+
+.card p.summary {
+  padding: 0.8rem;
+  font-size: 0.95rem;
+  color: #eee;
+}
+
+/* Hidden details */
+.card .details {
+  display: none;
+  padding: 0.8rem;
+  background: #5d4037;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  animation: expand 0.4s ease-in-out;
+}
+
+.card.active .details {
+  display: block;
+}
+
+/* Hover Animation */
+.card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.7);
+}
+
+/* Kerala Sub-Cards */
+.sub-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+}
+
+.sub-card {
+  background: #6d4c41;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.6);
+  transition: transform 0.3s ease;
+}
+
+.sub-card img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+}
+
+.sub-card h3 {
+  padding: 0.5rem;
+  color: #ffccbc;
+}
+
+.sub-card p {
+  padding: 0 0.5rem 0.5rem 0.5rem;
+  font-size: 0.85rem;
+  color: #f5f5f5;
+}
+
+.sub-card:hover {
+  transform: scale(1.05);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(20px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+
+@keyframes expand {
+  from {opacity: 0; transform: scaleY(0);}
+  to {opacity: 1; transform: scaleY(1);}
+}
+
+/* Navbar Dashboard */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #3e2723; /* Dark chocolate */
+  padding: 0.8rem 2rem;
+  box-shadow: 0 4px 15px rgb(255, 255, 255);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar .logo {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #ffccbc;
+}
+
+.navbar .nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.navbar .nav-links li {
+  display: inline;
+}
+
+.navbar .nav-links li a {
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #f5f5f5;
+  transition: color 0.3s, transform 0.2s;
+}
+
+.navbar .nav-links li a:hover {
+  color: #ffcc80; /* Golden orange */
+  transform: scale(1.1);
+}
+
+.navbar .signin-btn {
+  padding: 0.4rem 1rem;
+  background: #6d4c41;
+  border-radius: 8px;
+  color: #fff !important;
+  font-weight: bold;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.navbar .signin-btn:hover {
+  background: #8d6e63;
+  transform: scale(1.1);
+}
+
+/* Tourism Background Section */
+.tourism-background {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  padding: 2rem;
+  margin-top: 2rem;
+}
+
+.tourism-image {
+  height: 200px;
+  border-radius: 15px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+  animation: slideIn 1s ease forwards;
+  opacity: 0;
+}
+
+/* Individual Images */
+.tourism-image.img1 { background-image: url('images/t11.jpg'); animation-delay: 0.2s; }
+.tourism-image.img2 { background-image: url('images/t12.jpg'); animation-delay: 0.4s; }
+.tourism-image.img3 { background-image: url('images/t13.jpg'); animation-delay: 0.6s; }
+.tourism-image.img4 { background-image: url('images/t14.jpg'); animation-delay: 0.8s; }
+
+/* Animation */
+@keyframes slideIn {
+  from {opacity: 0; transform: translateY(30px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+
+/* Contact Section */
+.contact-section {
+  background: #4e342e; /* Dark chocolate */
+  padding: 2rem;
+  margin: 2rem 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+}
+
+.contact-section h2 {
+  color: #ffccbc;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.contact-section p {
+  color: #f5f5f5;
+  font-size: 1rem;
+  margin: 0.5rem 0;
+  text-align: center;
+}
+
+/* Modal Styles */
+.modal {
+  display: none; 
+  position: fixed;
+  z-index: 1001; 
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto; 
+  background-color: rgb(255, 255, 255);
+  transition: opacity 0.3s ease;
+}
+
+.modal-content {
+  background-color: #4e342e; /* dark chocolate */
+  margin: auto;
+  padding: 2rem;
+  border-radius: 12px;
+  width: 80%;
+  max-width: 500px;
+  color: #fff;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+.modal-content h2 {
+  color: #ffccbc;
+  margin-bottom: 1rem;
+}
+
+.modal-content p {
+  margin: 0.5rem 0;
+}
+
+.close {
+  color: #fff;
+  float: right;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.modal-content h2 {
+  color: #ffccbc;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.review {
+  background: #5d4037;
+  padding: 1rem;
+  margin: 0.5rem 0;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.4);
+  color: #fff;
+  text-align: center;
+}
+
+.review p {
+  margin: 0.3rem 0;
+}
+
+/* Modal for Sub-Cards */
+#subCardModal .modal-content img {
+  margin-bottom: 1rem;
+}
+
+/* General styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #fff;
+  color: #333;
+}
+
+/* Navbar Styling - Banner Navigation Bar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgb(255, 255, 255); /* Semi-transparent background */
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  color: #fff;
+  backdrop-filter: blur(5px); /* Optional: for a blurred background effect */
+}
+
+.navbar .logo {
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+
+.navbar .nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.navbar .nav-links li {
+  display: inline;
+}
+
+.navbar .nav-links li a {
+  text-decoration: none;
+  font-size: 1rem;
+  color: #fff;
+  font-weight: 500;
+  transition: color 0.3s, transform 0.2s;
+}
+
+.navbar .nav-links li a:hover {
+  color: #ffcc80; /* Golden orange on hover */
+  transform: scale(1.1);
+}
+
+.navbar .signin-btn {
+  padding: 0.4rem 1rem;
+  background: #6d4c41;
+  border-radius: 8px;
+  color: #fff !important;
+  font-weight: bold;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.navbar .signin-btn:hover {
+  background: #8d6e63;
+  transform: scale(1.1);
+}
+
+/* Banner Section */
+.banner-container {
+  width: 100%;
+  height: 400px;
+  background-image: url('images/banner.jpg'); /* Replace with your banner image */
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.banner-content {
+  max-width: 800px;
+  padding: 2rem;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  text-align: center;
+}
+
+.banner-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.banner-content p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.cta-btn-container {
+  margin-top: 20px;
+}
+
+.cta-btn {
+  background-color: #f57c00;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.cta-btn:hover {
+  background-color: #ff9800;
+}
+
+/* Content section styles */
+.content {
+  padding: 2rem;
+  text-align: center;
+}
+
+.content h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.content p {
+  font-size: 1.2rem;
+  color: #fbfbfbfd;
+}
+/* General styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #fff;
+  color: #ffffff;
+}
+
+/* Navbar Styling - Banner Navigation Bar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.5);  /*Semi-transparent background*/
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  color: #fff;
+  backdrop-filter: blur(5px); /* Optional: for a blurred background effect */
+}
+
+.navbar .logo {
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+
+.navbar .nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.navbar .nav-links li {
+  display: inline;
+}
+
+.navbar .nav-links li a {
+  text-decoration: none;
+  font-size: 1rem;
+  color: #fff;
+  font-weight: 500;
+  transition: color 0.3s, transform 0.2s;
+}
+
+.navbar .nav-links li a:hover {
+  color: #ffcc80; /* Golden orange on hover */
+  transform: scale(1.1);
+}
+
+.navbar .signin-btn {
+  padding: 0.4rem 1rem;
+  background: #6d4c41;
+  border-radius: 8px;
+  color: #fff !important;
+  font-weight: bold;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.navbar .signin-btn:hover {
+  background: #8d6e63;
+  transform: scale(1.1);
+}
+
+/* Banner Section */
+.banner-container {
+  width: 100%;
+  height: 400px;
+  background-image: url('images/ba.jpg'); /* Replace with your banner image */
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); */
+}
+
+.banner-container {
+  position: relative; /* so child can be positioned inside */
+}
+
+.banner-content {
+  max-width: 500px;
+  padding: 2rem;
+  border-radius: 10px;
+  text-align: center;
+
+  position: absolute;
+  bottom: 20px;   /* push from bottom */
+  right: 20px;    /* push from right */
+}
+
+
+.banner-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.banner-content p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.cta-btn-container {
+  margin-top: 20px;
+}
+
+.cta-btn {
+  background-color: #f57c00;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.cta-btn:hover {
+  background-color: #ff9800;
+}
+
+/* Content section styles */
+.content {
+  padding: 2rem;
+  text-align: center;
+}
+
+.content h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.content p {
+  font-size: 1.2rem;
+  color: #ffffff;
+}
+
+.cta-btn {
+  background-color: #855803;
+  color: white;
+  padding: 10px 20px;   /* bigger padding = larger button */
+  font-size: 15px;      /* larger text */
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.cta-btn:hover {
+  background-color: #005fcc;
+  transform: scale(1.05); /* subtle hover effect */
+}
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 50px;
+  background: #111;
+  color: white;
+}
+.navbar .logo {
+  font-size: 20px;
+  font-weight: bold;
+}
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+.nav-links li a, .login-btn {
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.login-btn {
+  padding: 8px 16px;
+  border: 1px solid #fff;
+  border-radius: 20px;
+  transition: 0.3s;
+}
+.login-btn:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+/* Overlay (Background for popup) */
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+/* Form Box (Transparent Card) */
+.form-box {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  padding: 40px;
+  width: 350px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.4);
+  text-align: center;
+  position: relative;
+}
+
+/* Input Fields */
+.input-field {
+  width: 100%;
+  padding: 12px 15px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 25px;
+  outline: none;
+  background: rgba(255,255,255,0.2);
+  color: #fff;
+}
+.input-field::placeholder {
+  color: #ddd;
+}
+
+/* Buttons */
+.submit {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 25px;
+  background: rgba(255,255,255,0.7);
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.submit:hover {
+  background: rgba(255,255,255,0.5);
+}
+
+/* Switch between login/signup */
+.switch {
+  margin-top: 15px;
+  color: #fff;
+}
+.switch a {
+  color: #00c3ff;
+  text-decoration: none;
+}
+.switch a:hover {
+  text-decoration: underline;
+}
+
+/* Hide signup by default */
+#signup {
+  display: none;
+}
+
+
+
+
+
+
+
