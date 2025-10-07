@@ -142,6 +142,66 @@ overlay.addEventListener("click", function(e) {
   }
 });
 
+    
+document.querySelectorAll('.toggle-button').forEach(button => {
+  button.addEventListener('click', function() {
+    const mediaContainer = this.previousElementSibling;
+    const img = mediaContainer.querySelector('img');
+    const existingIframe = mediaContainer.querySelector('iframe');
+    const videoUrl = mediaContainer.getAttribute('data-video');
+
+    // If video is already showing, toggle back to image
+    if (existingIframe) {
+      existingIframe.remove();
+      img.style.display = 'block';
+      this.textContent = 'Show Video';
+    } else {
+      const iframe = document.createElement('iframe');
+      iframe.src = videoUrl;
+      iframe.width = '100%';
+      iframe.height = '200';
+      iframe.frameBorder = '0';
+      iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+      iframe.allowFullscreen = true;
+
+      img.style.display = 'none';
+      mediaContainer.appendChild(iframe);
+      this.textContent = 'Hide Video';
+    }
+  });
+});
+
+
+  const searchInput = document.getElementById('searchInput');
+  // const cards = document.querySelectorAll('.card');
+
+  searchInput.addEventListener('input', () => {
+    const query = searchInput.value.toLowerCase().trim();
+
+    cards.forEach(card => {
+      const location = card.dataset.location.toLowerCase();
+      if (location.includes(query)) {
+        card.style.display = 'block';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  });
+
+const discoverBtn = document.getElementById('discover-btn');
+  const discoverSection = document.getElementById('discover-section');
+
+  // Add toggle functionality
+  discoverBtn.addEventListener('click', () => {
+    if (discoverSection.style.display === 'none' || discoverSection.style.display === '') {
+      discoverSection.style.display = 'block';
+      // Smooth scroll to the section
+      discoverSection.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      discoverSection.style.display = 'none';
+    }
+  });
+
 
 
 
