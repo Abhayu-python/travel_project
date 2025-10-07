@@ -8,18 +8,113 @@
 <body>
 
   <!-- Banner Navigation Bar -->
-  <nav class="navbar">
-    <div class="logo">🌏 Incredible India</div>
-    <ul class="nav-links">
-      <li><a href="#discover">Discover</a></li>
-      <li><a href="#trips">Trips</a></li>
-      <li><a href="#reviews">Reviews</a></li>
-      <li><a href="#contact">Contact</a></li>
-      <li><a class="login-btn" onclick="openModal()">Login</a></li>
+<nav class="navbar">
+  <div class="logo">🌏 Incredible India</div>
+  <ul class="nav-links">
+    <li><a id="discover-btn">Discover</a></li>
+    <!-- <li><a href="#trips">Trips</a></li> -->
+    <li><a href="#reviews">Reviews</a></li>
+    <li><a href="#contact">Contact</a></li>
 
-      <!-- <li><a href="#signin" class="signin-btn">Sign In</a></li> -->
-    </ul>
-  </nav>
+     <li>
+      <a href="#">Trip ▾</a>
+      <div class="dropdown">
+        <h4>🔹 Plan Your Trip</h4>
+        <a href="#">Destination Selector (Choose country/state/city)</a>
+        <a href="#">Travel Dates</a>
+        <a href="#">Budget Estimator</a>
+        <a href="#">Trip Duration</a>
+
+        <h4>🔹 Popular Trips</h4>
+        <a href="#">Top Tourist Destinations (Goa, Rajasthan, Kerala, Uttarakhand, etc.)</a>
+        <a href="#">Weekend Getaways</a>
+        <a href="#">Adventure Trips (trekking, rafting, camping)</a>
+        <a href="#">Spiritual Tours (Char Dham, Golden Temple, etc.)</a>
+
+        <h4>🔹 Customized Trips</h4>
+        <a href="#">Family Trips</a>
+        <a href="#">Picnic</a>
+        <a href="#">Solo Travel</a>
+        <a href="#">Friends Group Packages</a>
+
+        <h4>🔹 Travel Guides</h4>
+        <a href="#">Things to Do</a>
+        <a href="#">Best Time to Visit</a>
+        <a href="#">How to Reach</a>
+        <a href="#">Local Food & Culture</a>
+
+        <h4>🔹 Book Your Trip</h4>
+        <a href="#">Flight + Hotel + Cab Packages</a>
+        <a href="#">Itinerary Builder (custom day-wise plan)</a>
+        <a href="#">Booking Form / Get Quote</a>
+      </div>
+    </li>
+
+  
+
+    <!-- 🔍 Search bar -->
+    <li>
+      <div class="search-container">
+        <span>🔍</span>
+        <input type="text" id="searchInput" class="search-input" placeholder="Search city...">
+      </div>
+    </li>
+
+    <li><a class="login-btn" onclick="openModal()">Login</a></li>
+  </ul>
+</nav>
+
+<!-- ===== DISCOVER SECTION ===== -->
+<section id="discover-section">
+  <h2>Discover Top 5 Must-Visit Places in India</h2>
+  <p>Explore the most iconic destinations that capture the spirit of Incredible India.</p>
+
+  <div class="discover-container">
+    <div class="place-card">
+      <img src="images/ramji.jpg" alt="Ram Mandir, Ayodhya">
+      <div class="place-info">
+        <h3>Ayodhya - Ram Mandir</h3>
+        <p>The Ayodhya Ram Mandir stands as a symbol of unwavering faith and cultural heritage for millions of devotees</p>
+      </div>
+    </div>
+
+    <div class="place-card">
+      <img src="images/ladakh.jpg" alt="Ladakh">
+      <div class="place-info">
+        <h3>Ladakh - Uttarakhand</h3>
+        <p>Amidst stark, high-altitude landscapes, the prayer flags of Ladakh whisper ancient tales. Its majestic, barren mountains stand as silent witnesses to the shimmering turquoise waters of its pristine lakes.</p>
+      </div>
+    </div>
+
+    <div class="place-card">
+      <img src="images/naharfort.jpg" alt="Jaipur">
+      <div class="place-info">
+        <h3>Naharfort - Jaipur</h3>
+        <p>Rising proudly on the Aravalli hills, Nahargarh Fort, meaning "abode of tigers," offers a majestic, panoramic view of the Pink City. It was built in 1734 by Maharaja Sawai Jai Singh II as a royal retreat and a key defensive structure.</p>
+      </div>
+    </div>
+
+    <div class="place-card">
+      <img src="images/manali.jpg" alt="Manali">
+      <div class="place-info">
+        <h3>Manali - Himachal Pradesh</h3>
+        <p>The glacial water of the Beas River rushes through the lush green valleys of Manali, surrounded by the tranquil beauty of deodar and pine forests. Snow-capped peaks of the Himalayas stand guard, offering a serene escape for nature lovers and adventurers alike.</p>
+      </div>
+    </div>
+
+    <div class="place-card">
+      <img src="images/vegamon.jpg" alt="Vegamon">
+      <div class="place-info">
+        <h3>Vegamon - Kerala</h3>
+        <p>Often called the "Scotland of India" for its expansive, misty meadows, Vagamon is a tranquil hill station in Kerala. It is an ideal getaway for nature lovers and adventurers, offering serene landscapes of rolling hills, dense pine forests, and tea plantations..</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
 
 
         
@@ -130,6 +225,9 @@
       <option value="Rajasthan">Rajasthan</option>
       <option value="goa">Goa</option>
       <option value="kerala">Kerala</option>
+      <option value="Uttar Pradesh">Uttar Pradesh</option>
+      <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+      <option value="Himachal Pradesh">Himachal Pradesh</option>
     </select>
   </section>
 
@@ -141,78 +239,116 @@
   <img src="images/uk.jpg" alt="Uttarakhand">
   <h2>Uttarakhand</h2>
   <p class="summary">Explore the Land of the Gods, Uttarakhand, a destination offering spiritual rejuvenation.</p>
+  
   <div class="details">
     <div class="sub-cards">
+      <!-- Reusable Template: Sub Card -->
       <div class="sub-card">
-        <img src="images/b.jpg" alt="Badrinath">
-        <h3>Badrinath</h3>
-        <p>One of the Char Dham temples, sacred and spiritual.
-          Location: Chamoli district, Uttarakhand, India. Badrinath is situated at an elevation of 3,133 meters (10,279 ft) on the banks of the Alaknanda River.
-          History & Mythology: The temple is believed to have been established by Adi Shankaracharya in the 8th century. It is associated with legends of the sage Badri and Lord Vishnu meditating in this area.
-        </p>
-      </div>
-      <div class="sub-card">
-        <img src="images/k.jpg" alt="Kedarnath">
+  <h3>Badrinath</h3>
+  <p>
+    One of the Char Dham temples, sacred and spiritual.
+    Location: Chamoli district, Uttarakhand, India. Badrinath is situated at an elevation of 3,133 meters (10,279 ft) on the banks of the Alaknanda River.
+    History & Mythology: The temple is believed to have been established by Adi Shankaracharya in the 8th century. It is associated with legends of the sage Badri and Lord Vishnu meditating in this area.
+  </p>
+
+  <div class="media-container" data-video="https://www.youtube.com/embed/cxlIUOMUrS4?si=wlYu3nhFRh5FNLI5" >
+    <img src="images/b.jpg" alt="Badrinath">
+  </div>
+  <button class="toggle-button">Show Video</button>
+</div>
+<div class="sub-card">
         <h3>Kedarnath</h3>
         <p>Famous Shiva temple amidst the Himalayas, part of Char Dham.
           Location: Rudraprayag district, Uttarakhand, India. It is situated at an altitude of 3,583 meters (11,755 ft) in the Garhwal Himalayas near the Mandakini River.
           History & Mythology: According to legend, the Pandavas sought Lord Shiva at Kedarnath after the Mahabharata war for atonement. Shiva is believed to have evaded them and appeared in the form of a bull.
-          Best Time to Visit: April to June and September to November. The temple remains closed in winter due to heavy snowfall.
         </p>
+
+        <div class="media-container" data-video="https://www.youtube.com/embed/Ks7f1Gr7MnI?si=awolqJYvRO7aiBOg">
+          <img src="images/k.jpg" alt="Kedarnath">
+        </div>
+        <button class="toggle-button">Show Video</button>
       </div>
+
       <div class="sub-card">
-        <img src="images/g.jpg" alt="Gangotri">
         <h3>Gangotri</h3>
         <p>Origin of the Ganga River, spiritual and scenic beauty.
           Location: Uttarkashi district, Uttarakhand, India, at an altitude of 3,415 meters (11,204 ft). Gangotri is the origin of the Ganga River.
 
-Significance: Gangotri Temple is dedicated to Goddess Ganga. It is a highly revered site in Hinduism, as the river is considered sacred and purifying. It is usually the last stop on the Chota Char Dham Yatra.
+          Significance: Gangotri Temple is dedicated to Goddess Ganga. It is a highly revered site in Hinduism, as the river is considered sacred and purifying. It is usually the last stop on the Chota Char Dham Yatra.
         </p>
+
+        <div class="media-container" data-video="https://www.youtube.com/embed/VJZ-y8BGHcQ?si=44bPnm5ycUS3hxXQ">
+          <img src="images/g.jpg" alt="Gangotri">
+        </div>
+        <button class="toggle-button">Show Video</button>
       </div>
+
       <div class="sub-card">
-        <img src="images/y.jpg" alt="Yamunotri">
         <h3>Yamunotri</h3>
         <p>Holy shrine of Goddess Yamuna, part of Char Dham pilgrimage.
           Location: Uttarkashi district, Uttarakhand, India, at an altitude of 3,293 meters (10,804 ft). The Yamunotri Temple is the source of the Yamuna River, one of India’s sacred rivers.
 
-Significance: Yamunotri is dedicated to Goddess Yamuna, and visiting this temple is believed to cleanse sins and grant spiritual merit. It is the first stop for many pilgrims on the Chota Char Dham Yatra.
+          Significance: Yamunotri is dedicated to Goddess Yamuna, and visiting this temple is believed to cleanse sins and grant spiritual merit. It is the first stop for many pilgrims on the Chota Char Dham Yatra.
         </p>
+
+        <div class="media-container" data-video="https://www.youtube.com/embed/7G-DoCdJrLY?si=3FAjVUOZauw6fe7u">
+          <img src="images/y.jpg" alt="Yamunotri">
+        </div>
+        <button class="toggle-button">Show Video</button>
       </div>
     </div>
   </div>
 </div>
-
-
     <!-- Jaipur -->
 <div class="card" data-location="Rajasthan">
   <img src="images/rajasthan.jpg" alt="Rajasthan">
   <h2>Rajasthan</h2>
   <p class="summary">Rajasthan is the largest Indian state by area and is known for its rich history, vibrant culture, and iconic forts and palaces.</p>
+
   <div class="details">
     <div class="sub-cards">
-      <div class="sub-card">
+      <div class="sub-card" data-video="https://www.youtube.com/embed/48TcOu9kPqg?autoplay=1">
         <img src="images/a.jpg" alt="Amber Fort">
         <h3>Amber Fort</h3>
-        <p>Historic fort with stunning architecture and views.\n Amer Fort, or Amber Fort, is a historic and majestic fortress located in Amer, now a part of Jaipur, Rajasthan, India. Built in red sandstone and marble, construction began around 1600 by the Rajput Maharajas and served as a royal residence and political center for the Kachwaha Rajputs for centuries. </p>
+        <p>a grand palace-fortress and UNESCO World Heritage Site in Jaipur, India, built by Raja Man Singh I in the 16th century and renowned for its exquisite blend of Hindu and Mughal architecture, featuring intricate carvings, delicate marble inlays, stunning mirror work in the Sheesh Mahal, and large ramparts overlooking Maota Lake</p>
       </div>
-      <div class="sub-card">
+      <button class="toggle-button">Show Video</button>
+
+
+      <div class="sub-card" data-video="https://www.youtube.com/embed/48TcOu9kPqg?autoplay=1">
         <img src="images/jaipur.jpg" alt="Hawa Mahal">
         <h3>Hawa Mahal</h3>
-        <p>The Palace of Winds with its iconic pink façade.The Hawa Mahal, or "Palace of Winds," is a unique 18th-century palace in Jaipur, India, built for royal women to observe street festivities unseen, featuring a striking honeycomb-like facade with 953 small, jharokha windows. Designed by Lal Chand Usta with a blend of Hindu Rajput and Islamic styles, its distinctive pyramidal shape, leaning at an 87-degree angle</p>
+        <p>The Hawa Mahal, or "Palace of Winds," is a distinctive five-story structure in Jaipur, India, built in 1799 by Maharaja Sawai Pratap Singh. Its unique pink sandstone facade features 953 small windows, or jharokhas, designed to allow royal women to observe street festivities from within the palace while remaining unseen.The Hawa Mahal, or "Palace of Winds," is a distinctive five-story structure in Jaipur, India, built in 1799 by Maharaja Sawai Pratap Singh. Its unique pink sandstone facade features 953 small windows, or jharokhas, designed to allow royal women to observe street festivities from within the palace while remaining unseen.</p>
       </div>
-      <div class="sub-card">
+      <button class="toggle-button">Show Video</button>
+
+
+      <div class="sub-card" data-video="https://www.youtube.com/embed/eiVMSJFpPX8?autoplay=1">
         <img src="images/c.jpg" alt="City Palace">
         <h3>City Palace</h3>
-        <p>Royal residence with museums and courtyards.A City Palace is a historical complex in India that often refers to either the City Palace of Jaipur, a fusion of Mughal and Rajput architecture that still houses the royal family and a museum, or the City Palace in Udaipur, the largest palace of its kind in Rajasthan and also a major museum</p>
+        <p>City Palace refers to royal residence complexes, with the most famous being in Jaipur, India, a blend of Rajput and Mughal architecture, built by Maharaja Sawai Jai Singh II, which now houses a museum and the royal family. </p>
       </div>
-      <div class="sub-card">
+      <button class="toggle-button">Show Video</button>
+
+
+      <div class="sub-card" data-video="https://www.youtube.com/embed/ND6KOYJl1dg?autoplay=1">
         <img src="images/j.jpg" alt="Jal Mahal">
         <h3>Jal Mahal</h3>
-        <p>Beautiful palace in the middle of Man Sagar Lake.The Jal Mahal, or "Water Palace," is a historic, five-story palace built in the 18th century in the middle of Man Sagar Lake in Jaipur, India, appearing to float on the water when the lake is full. Constructed by Maharaja Jai Singh II in Rajput. it was originally a hunting lodge and has since been restored to preserve the surrounding lake's ecosystem, now a popular tourist attraction for its stunning architecture and scenic location. </p>
+        <p>Located deep within the walled city, the City Palace Complex was conceived and built by Maharaja Sawai Jai Singh II, the founder of Jaipur. A beautiful fusion of Mughal and Rajput architecture, the palace is still home to the last ruling royal family which lives in a private section of the palace..</p>
       </div>
+      <button class="toggle-button">Show Video</button>
     </div>
   </div>
 </div>
+
+<!-- 🔹 Modal Popup -->
+<div id="videoModal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn">&times;</span>
+    <iframe id="videoFrame" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+  </div>
+</div>
+
 
 <!-- Goa -->
 <div class="card" data-location="goa">
@@ -223,8 +359,12 @@ Significance: Yamunotri is dedicated to Goddess Yamuna, and visiting this temple
     <div class="sub-cards">
       <div class="sub-card">
         <img src="images/baga.jpg" alt="Baga Beach">
+        <div class="sub-card" data-video="https://www.youtube.com/embed/m2MfLXbnCC8?si=kEP3BaJpCa42Gf--">
+        <!-- <img src="images/jaipur.jpg" alt="Hawa Mahal"> -->
         <h3>Baga Beach</h3>
         <p>Famous for nightlife, water sports and beach parties. Baga Beach is a famous, lively, golden-sanded beach in North Goa, known for its bustling atmosphere, water sports like jet skiing and parasailing, vibrant nightlife along Tito's Lane, and diverse shopping opportunities including flea and night markets. Named after the Baga Creek, it offers a mix of adventure, relaxation.</p>
+      </div>
+      <button class="toggle-button">Show Video</button>
       </div>
       <div class="sub-card">
         <img src="images/fort.jpg" alt="Fort Aguada">
@@ -242,6 +382,13 @@ Significance: Yamunotri is dedicated to Goddess Yamuna, and visiting this temple
         <p>Scenic southern beach, perfect for a relaxed getaway. Palolem Beach is a picturesque, crescent-shaped beach in South Goa known for its calm, shallow waters suitable for swimming and water sports, and its beautiful, clean white sand. It offers a blend of tranquility, a relaxed atmosphere with beachfront huts and restaurants, and opportunities for activities like dolphin spotting, kayaking, and boat trips to nearby islands.</p>
       </div>
     </div>
+  </div>
+</div>
+
+<div id="videoModal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn">&times;</span>
+    <iframe id="videoFrame" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
   </div>
 </div>
 
@@ -468,8 +615,8 @@ Significance: Yamunotri is dedicated to Goddess Yamuna, and visiting this temple
   <!-- Contact Section -->
 <section id="contact" class="contact-section">
   <h2>Contact Me</h2>
-  <p>📧 Email: Aps123@gmail.com</p>
-  <p>📞 Phone: +91 8000010000</p>
+  <p>📧 Email: Aps123@gmail.com, Travel2334@gmail.com</p>
+  <p>📞 Phone: +91 8000010000, +91 7000010000</p>
   <p>🏢 Address: Lakser- Haridwar, uttarakhand, India</p>
   <p>💬 Feel free to reach out for collaborations, suggestions or travel queries!</p>
 </section>
@@ -479,8 +626,8 @@ Significance: Yamunotri is dedicated to Goddess Yamuna, and visiting this temple
   <div class="modal-content">
     <span class="close">&times;</span>
     <h2>Contact Me</h2>
-    <p>📧 Email: Travel2334.com</p>
-    <p>📞 Phone: +91 8000010000</p>
+    <p>📧 Email: Aps123@gmail.com, Travel2334@gmail.com</p>
+    <p>📞 Phone: +91 8000010000, +91 7000010000</p>
     <p>🏢 Address: Lakser- Haridwar, Uttarakhand, India</p>
     <p>💬 Feel free to reach out for collaborations, suggestions, or travel queries!</p>
   </div>
